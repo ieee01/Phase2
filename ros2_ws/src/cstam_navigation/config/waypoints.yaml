@@ -1,0 +1,288 @@
+# CSTAM Indoor Delivery Service Robot Waypoints Configuration (Adapted to restaurant.world)
+# All delivery waypoints are located in free service aisles facing the tables with safe clearance.
+waypoints:
+  Dock:
+    name: "Docking & Resting Station"
+    x: 7.06
+    y: -12.00
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "dock"
+
+  Kitchen/Pickup:
+    name: "Kitchen & Order Pickup Counter"
+    x: -9.60
+    y: -1.39
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 1.0
+    qw: 0.0
+    type: "pickup"
+
+  Table 0:
+    name: "Dining Area - Table 0 (North Wing Service Point)"
+    x: -8.24
+    y: 0.50
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 1:
+    name: "Dining Area - Table 1 (North Wing Service Point)"
+    x: -5.64
+    y: 0.50
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 2:
+    name: "Dining Area - Table 2 (North Wing Service Point)"
+    x: -3.04
+    y: 0.50
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 3:
+    name: "Dining Area - Table 3 (North Wing Service Point)"
+    x: -0.44
+    y: 0.50
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 4:
+    name: "Dining Area - Table 4 (North Wing Service Point)"
+    x: 2.16
+    y: 0.50
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 5:
+    name: "Dining Area - Table 5 (North Wing Service Point)"
+    x: 4.76
+    y: 0.50
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 6:
+    name: "Dining Area - Table 6 (Mid Lounge Service Point)"
+    x: -8.24
+    y: -3.10
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 7:
+    name: "Dining Area - Table 7 (Mid Lounge Service Point)"
+    x: -5.64
+    y: -3.10
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 8:
+    name: "Dining Area - Table 8 (Mid Lounge Service Point)"
+    x: -3.04
+    y: -3.10
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 9:
+    name: "Dining Area - Table 9 (Mid Lounge Service Point)"
+    x: -0.44
+    y: -3.10
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 10:
+    name: "Dining Area - Table 10 (Mid Lounge Service Point)"
+    x: 2.16
+    y: -3.10
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 11:
+    name: "Dining Area - Table 11 (Mid Lounge Service Point)"
+    x: 4.76
+    y: -3.10
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: 0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 12:
+    name: "Dining Area - Table 12 (Central Salon Service Point)"
+    x: -8.24
+    y: -5.85
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 13:
+    name: "Dining Area - Table 13 (Central Salon Service Point)"
+    x: -5.64
+    y: -5.85
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 14:
+    name: "Dining Area - Table 14 (Central Salon Service Point)"
+    x: -3.04
+    y: -5.85
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 15:
+    name: "Dining Area - Table 15 (Central Salon Service Point)"
+    x: -0.44
+    y: -5.85
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 16:
+    name: "Dining Area - Table 16 (Central Salon Service Point)"
+    x: 2.16
+    y: -5.85
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 17:
+    name: "Dining Area - Table 17 (Central Salon Service Point)"
+    x: 4.76
+    y: -5.85
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 18:
+    name: "Dining Area - Table 18 (South Wing Service Point)"
+    x: -8.24
+    y: -9.45
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 19:
+    name: "Dining Area - Table 19 (South Wing Service Point)"
+    x: -5.64
+    y: -9.45
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 20:
+    name: "Dining Area - Table 20 (South Wing Service Point)"
+    x: -3.04
+    y: -9.45
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 21:
+    name: "Dining Area - Table 21 (South Wing Service Point)"
+    x: -0.44
+    y: -9.45
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 22:
+    name: "Dining Area - Table 22 (South Wing Service Point)"
+    x: 2.16
+    y: -9.45
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"
+
+  Table 23:
+    name: "Dining Area - Table 23 (South Wing Service Point)"
+    x: 4.76
+    y: -9.45
+    z: 0.0
+    qx: 0.0
+    qy: 0.0
+    qz: -0.7071
+    qw: 0.7071
+    type: "delivery"

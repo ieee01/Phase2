@@ -1,0 +1,32 @@
+# Pyrefly Configuration for CSTAM ROS 2 Workspace
+search-path = [
+    "/opt/ros/jazzy/lib/python3.12/site-packages",
+    "ros2_ws/src/cstam_core"
+]
+
+extraSearchPaths = [
+    "/opt/ros/jazzy/lib/python3.12/site-packages",
+]
+
+[pyrefly]
+replace-imports-with-any = [
+    "ament_index_python",
+    "ament_index_python.*",
+    "launch",
+    "launch.*",
+    "launch_ros",
+    "launch_ros.*",
+    "rclpy",
+    "rclpy.*",
+    "nav2_msgs",
+    "nav2_msgs.*",
+    "geometry_msgs",
+    "geometry_msgs.*",
+    "sensor_msgs",
+    "sensor_msgs.*",
+    "std_msgs",
+    "std_msgs.*",
+    "tf2_msgs",
+    "tf2_msgs.*",
+    "xacro"
+]

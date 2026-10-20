@@ -1,0 +1,239 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="dynamic_obstacle">
+    <static>false</static>
+
+    <!-- Main Body Link (Pedestrian Figure) -->
+    <link name="link">
+      <gravity>true</gravity>
+      <kinematic>false</kinematic>
+      <inertial>
+        <!-- Heavy low base ensures model never tips over or floats -->
+        <mass>50.0</mass>
+        <pose>0 0 0.15 0 0 0</pose>
+        <inertia>
+          <ixx>12.0</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>12.0</iyy>
+          <iyz>0.0</iyz>
+          <izz>6.0</izz>
+        </inertia>
+      </inertial>
+
+      <!-- Collision cylinder detectable by 2D LiDAR (h: 1.55m, r: 0.22m, bottom at z: 0.15m) -->
+      <collision name="pedestrian_collision">
+        <pose>0 0 0.92 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.22</radius>
+            <length>1.55</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <!-- Front Gliding Caster Contact -->
+      <collision name="front_caster_collision">
+        <pose>0.16 0 0.04 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.04</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <!-- Rear Gliding Caster Contact -->
+      <collision name="rear_caster_collision">
+        <pose>-0.16 0 0.04 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.04</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <!-- Visual 1: Legs (Dark Trousers) -->
+      <visual name="legs_visual">
+        <pose>0 0 0.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.18</radius>
+            <length>0.70</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.15 0.18 0.22 1</ambient>
+          <diffuse>0.15 0.18 0.22 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <!-- Visual 2: Torso (Red/Amber Service Jacket for high visual contrast) -->
+      <visual name="torso_visual">
+        <pose>0 0 1.10 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.32 0.46 0.70</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.85 0.30 0.15 1</ambient>
+          <diffuse>0.85 0.30 0.15 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <!-- Visual 3: Head -->
+      <visual name="head_visual">
+        <pose>0 0 1.60 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.14</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0.92 0.75 0.62 1</ambient>
+          <diffuse>0.92 0.75 0.62 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <!-- Visual 4: Badge / Waiter Indicator -->
+      <visual name="badge_visual">
+        <pose>0.17 0.08 1.20 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.10 0.06</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.95 0.85 0.20 1</ambient>
+          <diffuse>0.95 0.85 0.20 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Left Drive Wheel -->
+    <link name="left_wheel">
+      <pose>0 0.18 0.05 0 0 0</pose>
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_wheel_collision">
+        <pose>0 0 0 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name="left_wheel_joint" type="revolute">
+      <parent>link</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Right Drive Wheel -->
+    <link name="right_wheel">
+      <pose>0 -0.18 0.05 0 0 0</pose>
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_wheel_collision">
+        <pose>0 0 0 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name="right_wheel_joint" type="revolute">
+      <parent>link</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Gazebo Sim Differential Drive Plugin for rock-solid upright ground kinematics -->
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.36</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
+      <max_linear_acceleration>1.5</max_linear_acceleration>
+      <max_angular_acceleration>2.5</max_angular_acceleration>
+      <topic>/dynamic_obstacle/cmd_vel</topic>
+      <odom_topic>/dynamic_obstacle/odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>dynamic_obstacle</child_frame_id>
+      <odom_publisher_frequency>20</odom_publisher_frequency>
+    </plugin>
+  </model>
+</sdf>
